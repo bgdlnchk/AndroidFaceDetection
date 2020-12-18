@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         val detector = FaceDetection.getClient(options)
         detector.process(image)
                 .addOnSuccessListener {faces ->
-                    // Task completed successfully
                     val drawingView = DrawRect(applicationContext, faces)
                     drawingView.draw(Canvas(mutableBitmap))
                     runOnUiThread { testImage.setImageBitmap(mutableBitmap) }
